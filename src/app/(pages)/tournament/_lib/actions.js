@@ -1,10 +1,10 @@
 "use server";
 
 import { put } from "@vercel/blob";
-import { cookies } from "next/headers";
+// import { cookies } from "next/headers";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-const cookieStore = cookies();
+// const cookieStore = cookies();
 
 export async function createTournament(data) {
   try {
@@ -12,7 +12,6 @@ export async function createTournament(data) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Cookie: cookieStore.toString(),
       },
       body: JSON.stringify(data),
     });
@@ -65,7 +64,6 @@ export async function registerPlayerToTournament(formData, tournamentId) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Cookie: cookieStore.toString(),
         },
         body: JSON.stringify(payload),
       }
