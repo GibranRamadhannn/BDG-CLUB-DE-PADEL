@@ -2,9 +2,11 @@
 
 import { put } from "@vercel/blob";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
 export async function createTournament(data) {
   try {
-    const res = await fetch("/api/tournaments", {
+    const res = await fetch(`${baseUrl}/api/tournaments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -53,7 +55,7 @@ export async function registerPlayerToTournament(formData, tournamentId) {
     };
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/tournaments/${tournamentId}/register`,
+      `${baseUrl}/api/tournaments/${tournamentId}/register`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
