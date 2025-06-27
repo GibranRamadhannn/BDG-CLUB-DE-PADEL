@@ -35,9 +35,10 @@ export async function createTournament(data) {
 
 export async function registerPlayerToTournament(formData, tournamentId) {
   try {
-    const { photo, proof_payment, date_birth, ...fields } = formData;
+    const { photo, proof_payment, community_logo, date_birth, ...fields } = formData;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     const cookieHeader = cookies().toString();
+
     const upload = async (file, prefix) => {
       if (!file) return null;
       const blob = await put(`${prefix}-${Date.now()}-${file.name}`, file, {
@@ -50,11 +51,13 @@ export async function registerPlayerToTournament(formData, tournamentId) {
 
     const photoUrl = await upload(photo, "player");
     const proofPaymentUrl = await upload(proof_payment, "payment");
+    const communtiyLogoUrl = await upload(community_logo, "community_logo");
 
     const payload = {
       ...fields,
       photo: photoUrl,
       proof_payment: proofPaymentUrl,
+      community_logo: proofPaymentUrl,
       status_payment: "PENDING",
       date_birth: date_birth?.toISOString?.() ?? null,
     };

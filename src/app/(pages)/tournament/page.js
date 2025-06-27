@@ -23,7 +23,7 @@ export default function TournamentPage() {
   return (
     <section className="min-h-screen font-[family-name:var(--font-montserrat)] bg-mercury">
       {/* Title & Button Add Tournament*/}
-      <div className="pt-36 mb-10 mx-6 flex justify-start gap-4 w-full items-center">
+      <div className="pt-36 mb-10 mx-6 flex md:flex-row flex-col justify-start gap-4 w-full md:items-center items-start">
         <h1 className="md:text-4xl text-3xl text-black font-bold font-[family-name:var(--font-roboto)]">
           TOURNAMENTS
         </h1>

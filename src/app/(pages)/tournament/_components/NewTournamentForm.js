@@ -84,7 +84,7 @@ export default function FormNewTournament() {
   return (
     <form onSubmit={handleSubmit} className="relative">
       <section className="p-5 w-full">
-        <div className="w-full h-full grid grid-cols-2 gap-4 mb-4">
+        <div className="w-full h-full grid md:grid-cols-2 grid-cols-1 gap-4 mb-4">
           <InputField
             id="name"
             label="Tournament Name"

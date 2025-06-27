@@ -125,6 +125,7 @@ model Tournament_Players {
   player_id       Int
   status_payment  String
   proof_payment   String
+  community_logo  String?
   notes           String?
   created_at      DateTime @default(now())
   updated_at      DateTime @updatedAt

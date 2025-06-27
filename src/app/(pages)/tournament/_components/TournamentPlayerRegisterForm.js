@@ -29,6 +29,7 @@ export default function FormPlayerRegisterTournament() {
     player1: { ...emptyPlayer },
     player2: { ...emptyPlayer },
     proof_payment: null,
+    community_logo: null,
     notes: "",
   });
 
@@ -72,6 +73,7 @@ export default function FormPlayerRegisterTournament() {
 
     const common = {
       proof_payment: formData.proof_payment,
+      community_logo: formData.community_logo,
       notes: formData.notes,
     };
 
@@ -105,13 +107,14 @@ export default function FormPlayerRegisterTournament() {
       player1: { ...emptyPlayer },
       player2: { ...emptyPlayer },
       proof_payment: null,
+      community_logo: null,
       notes: "",
     });
 
   return (
     <form onSubmit={handleSubmit} className="relative">
       <section className="p-5 w-full">
-        <div className="w-full h-full grid grid-cols-2 gap-6 mb-4">
+        <div className="w-full h-full grid md:grid-cols-2 grid-cols-1 gap-6 mb-4">
           <div className="flex flex-col justify-start items-center gap-2 px-5">
             <h1 className="text-2xl mb-5 text-black font-bold font-[family-name:var(--font-roboto)]">
               PLAYER 1
@@ -403,6 +406,20 @@ export default function FormPlayerRegisterTournament() {
               value={formData.proof_payment}
               onChange={handleRootChange("proof_payment")}
               error={errors.proof_payment}
+              requiredIcon
+            />
+          </div>
+
+          <div className="px-5">
+            <InputField
+              id="community_logo"
+              label="Community Logo"
+              as="file"
+              accept=".jpg,.jpeg,.png,.pdf"
+              placeholder="Upload your community logo"
+              value={formData.community_logo}
+              onChange={handleRootChange("community_logo")}
+              error={errors.community_logo}
               requiredIcon
             />
           </div>
