@@ -1,17 +1,17 @@
 "use server";
 
 import { put } from "@vercel/blob";
-// import { cookies } from "next/headers";
-
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-// const cookieStore = cookies();
+import { cookies } from "next/headers";
 
 export async function createTournament(data) {
   try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const cookieHeader = cookies().toString();
     const res = await fetch(`${baseUrl}/api/tournaments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Cookie: cookieHeader,
       },
       body: JSON.stringify(data),
     });
@@ -36,7 +36,8 @@ export async function createTournament(data) {
 export async function registerPlayerToTournament(formData, tournamentId) {
   try {
     const { photo, proof_payment, date_birth, ...fields } = formData;
-
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const cookieHeader = cookies().toString();
     const upload = async (file, prefix) => {
       if (!file) return null;
       const blob = await put(`${prefix}-${Date.now()}-${file.name}`, file, {
@@ -64,6 +65,7 @@ export async function registerPlayerToTournament(formData, tournamentId) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Cookie: cookieHeader,
         },
         body: JSON.stringify(payload),
       }

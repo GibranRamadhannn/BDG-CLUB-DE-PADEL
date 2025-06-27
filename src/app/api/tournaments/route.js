@@ -26,13 +26,13 @@ export async function GET() {
 export async function POST(request) {
   try {
     // const userId = mockUserId;
-    // const session = await getServerSession(authOptions);
-    // if (!session || !session.user?.id) {
-    //   return NextResponse.json(
-    //     { error: "Unauthorized. Please login first." },
-    //     { status: 401 }
-    //   );
-    // }
+    const session = await getServerSession(authOptions);
+    if (!session || !session.user?.id) {
+      return NextResponse.json(
+        { error: "Unauthorized. Please login first." },
+        { status: 401 }
+      );
+    }
 
     const body = await request.json();
     console.log(body);
