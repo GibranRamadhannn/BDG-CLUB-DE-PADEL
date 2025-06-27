@@ -1,0 +1,141 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id              Int            @id @default(autoincrement())
+  email           String         @unique
+  username        String         @unique
+  password        String
+  remember_token  String?  
+  created_at      DateTime       @default(now())
+  updated_at      DateTime       @updatedAt
+
+  // Relations
+  profile             User_Profiles?
+  matches_created     Matches[]          @relation("UserMatches")
+  tournaments_created Tournaments[]      @relation("UserTournaments")
+}
+
+model User_Profiles {
+  id              Int      @id @default(autoincrement())
+  user_id         Int      @unique
+  full_name       String
+  nick_name       String?
+  phone_number    String?
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relations
+  user            Users    @relation(fields: [user_id], references: [id])
+}
+
+model Matches {
+  id              Int      @id @default(autoincrement())
+  format          String
+  name            String
+  field           String
+  field_address   String
+  cp_name         String
+  cp_phone_number String
+  cp_instagram    String?
+  description     String?
+  created_by      Int
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relations
+  creator         Users   @relation("UserMatches", fields: [created_by], references: [id])
+  players         Match_Players[]
+}
+
+model Match_Players {
+  id              Int      @id @default(autoincrement())
+  match_id        Int
+  full_name       String
+  nick_name       String?
+  phone_number    String
+  instagram       String?
+  address         String?
+  gender          String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relations
+  match           Matches   @relation(fields: [match_id], references: [id])
+}
+
+model Players {
+  id              Int @id @default(autoincrement())
+  full_name       String
+  nickname        String
+  gender          Gender
+  community       String?
+  jersey_size     String
+  phone_number    String
+  email           String
+  instagram       String?
+  date_birth      String
+  birth_place     String
+  photo           String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relations
+  tournament_players         Tournament_Players[]
+}
+
+model Tournaments {
+  id              Int @id @default(autoincrement())
+  name            String
+  description     String?
+  start_date      DateTime
+  end_date        DateTime
+  organizer       String
+  grand_prize     String
+  register_price  String
+  venue           String
+  venue_address   String
+  status          String
+  bank            String
+  account_number  String
+  created_by      Int
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relations
+  creator             Users   @relation("UserTournaments", fields: [created_by], references: [id])
+  tournament_players         Tournament_Players[]
+}
+
+model Tournament_Players {
+  id              Int @id @default(autoincrement())
+  tournament_id   Int
+  player_id       Int
+  status_payment  String
+  proof_payment   String
+  notes           String?
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  // Relations
+  tournament           Tournaments   @relation(fields: [tournament_id], references: [id])
+  player               Players   @relation(fields: [player_id], references: [id])
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
