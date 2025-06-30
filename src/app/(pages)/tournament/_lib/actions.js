@@ -35,7 +35,8 @@ export async function createTournament(data) {
 
 export async function registerPlayerToTournament(formData, tournamentId) {
   try {
-    const { photo, proof_payment, community_logo, date_birth, ...fields } = formData;
+    const { photo, proof_payment, community_logo, date_birth, ...fields } =
+      formData;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     const cookieHeader = cookies().toString();
 
@@ -57,7 +58,7 @@ export async function registerPlayerToTournament(formData, tournamentId) {
       ...fields,
       photo: photoUrl,
       proof_payment: proofPaymentUrl,
-      community_logo: proofPaymentUrl,
+      community_logo: communtiyLogoUrl,
       status_payment: "PENDING",
       date_birth: date_birth?.toISOString?.() ?? null,
     };

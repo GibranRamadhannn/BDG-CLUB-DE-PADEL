@@ -87,6 +87,27 @@ export default function InputField({
               onChange={(e) => rest.onChange?.(e.target.files?.[0])}
             />
           </div>
+        ) : as === "dropdown" ? (
+          <div className="relative w-full">
+            <select
+              id={id}
+              className={clsx(
+                "w-full border rounded px-3 py-2 text-cavernous bg-white",
+                error && "border-stoplight text-stoplight"
+              )}
+              value={value}
+              onChange={(e) => rest.onChange?.(e.target.value)}
+            >
+              <option value="" disabled hidden>
+                {placeholder || "Pilih opsi"}
+              </option>
+              {(options || []).map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
         ) : (
           <Component
             id={id}

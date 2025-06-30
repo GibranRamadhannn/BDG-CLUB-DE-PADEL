@@ -18,7 +18,6 @@ export default function FormPlayerRegisterTournament() {
     jersey_size: "",
     date_birth: null,
     birth_place: "",
-    community: "",
     phone_number: "",
     email: "",
     instagram: "",
@@ -30,6 +29,7 @@ export default function FormPlayerRegisterTournament() {
     player2: { ...emptyPlayer },
     proof_payment: null,
     community_logo: null,
+    community: "",
     notes: "",
   });
 
@@ -74,6 +74,7 @@ export default function FormPlayerRegisterTournament() {
     const common = {
       proof_payment: formData.proof_payment,
       community_logo: formData.community_logo,
+      community: formData.community,
       notes: formData.notes,
     };
 
@@ -108,6 +109,7 @@ export default function FormPlayerRegisterTournament() {
       player2: { ...emptyPlayer },
       proof_payment: null,
       community_logo: null,
+      community: "",
       notes: "",
     });
 
@@ -182,17 +184,6 @@ export default function FormPlayerRegisterTournament() {
               onChange={handlePlayerChange("player1", "date_birth")}
               error={errors.p1_date_birth}
               withTime={false}
-              requiredIcon
-            />
-
-            <InputField
-              id="p1-community"
-              label="Community"
-              type="text"
-              placeholder="Enter community full name"
-              value={formData.player1.community}
-              onChange={handlePlayerChange("player1", "community")}
-              error={errors.p1_community}
               requiredIcon
             />
 
@@ -313,17 +304,6 @@ export default function FormPlayerRegisterTournament() {
             />
 
             <InputField
-              id="p2-community"
-              label="Community"
-              type="text"
-              placeholder="Enter community full name"
-              value={formData.player2.community}
-              onChange={handlePlayerChange("player2", "community")}
-              error={errors.p2_community}
-              requiredIcon
-            />
-
-            <InputField
               id="p2-phone_number"
               label="Phone Number"
               type="text"
@@ -378,6 +358,40 @@ export default function FormPlayerRegisterTournament() {
               value={formData.community_logo}
               onChange={handleRootChange("community_logo")}
               error={errors.community_logo}
+              requiredIcon
+            />
+          </div>
+
+          <div className="px-5">
+            <InputField
+              id="community"
+              label="Community"
+              as="dropdown"
+              placeholder="Select your community"
+              value={formData.community}
+              onChange={handleRootChange("community")}
+              options={[
+                { value: "bcdp", label: "BCDP" },
+                { value: "pppadel", label: "PPPadel" },
+                { value: "127_padel", label: "127 Padel" },
+                { value: "atte", label: "ATTE" },
+                { value: "hari_hari_padel", label: "Hari Hari Padel" },
+                { value: "pagi_pagi", label: "Pagi Pagi" },
+                { value: "baiko_padel_club", label: "Baiko Padel Club" },
+                { value: "padel_ngasal", label: "Padel Ngasal" },
+                {
+                  value: "final_padel_community",
+                  label: "Final Padel Community",
+                },
+                { value: "padelicios", label: "Padelicios" },
+                { value: "nyobain_padel", label: "Nyobain Padel" },
+                { value: "padel_pisan", label: "Padel Pisan" },
+                { value: "the_padel_hub", label: "The Padel Hub" },
+                { value: "the_padel_club", label: "The Padel Club" },
+                { value: "padel_pop", label: "Padel Pop" },
+                { value: "belajar_padel", label: "Belajar Padel" },
+              ]}
+              error={errors.community}
               requiredIcon
             />
           </div>
