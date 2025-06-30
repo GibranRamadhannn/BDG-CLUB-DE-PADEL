@@ -91,9 +91,10 @@ export default function FormPlayerRegisterTournament() {
       toast.success("Both players registered successfully!");
       resetForm();
       // router.replace("/tournament");
-      router.replace(
-        `/tournament/${tournamentId}/${p1.tournament_player.player_id}/${p2.tournament_player.player_id}/register/confirmation`
-      );
+      router.replace(`/tournament/${tournamentId}/confirmation`);
+      // router.replace(
+      //   `/tournament/${tournamentId}/${p1.tournament_player.player_id}/${p2.tournament_player.player_id}/register/confirmation`
+      // );
     } else {
       toast.error("Some errors occurred. Please check the form.");
       const rename = (obj = {}, prefix) =>
