@@ -17,13 +17,17 @@ export default function RegisterConfirmationPage() {
   const { tournamentId, playerId1, playerId2 } = params;
   const router = useRouter();
 
-  const handleInputChange = (field) => (e) => {
+  const extractValue = (evtOrVal) => {
+    if (evtOrVal instanceof File || evtOrVal instanceof Blob) return evtOrVal;
+    if (evtOrVal?.target?.files) return evtOrVal.target.files[0];
+    return evtOrVal?.target?.value ?? evtOrVal;
+  };
+
+  const handleInputChange = (field) => (evtOrVal) => {
+    const value = extractValue(evtOrVal);
     setFormData((prev) => ({
       ...prev,
-      [field]:
-        field === "proof_payment"
-          ? e.target.files?.[0] || null
-          : e.target.value,
+      [field]: value,
     }));
   };
 
@@ -109,6 +113,7 @@ export default function RegisterConfirmationPage() {
             accept=".jpg,.jpeg,.png"
             placeholder="Upload your proof payment"
             onChange={handleInputChange("proof_payment")}
+            value={formData.proof_payment}
             requiredIcon
           />
 

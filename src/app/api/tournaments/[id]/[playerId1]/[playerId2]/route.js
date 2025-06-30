@@ -8,13 +8,12 @@ if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 export async function POST(request, { params }) {
   try {
     const { tournamentId, playerId1, playerId2 } = params;
-    const { proof_payment, notes } = await request.json();
+    const body = await request.json();
+
+    const { proof_payment, notes } = body;
 
     if (!proof_payment) {
-      return NextResponse.json(
-        { message: "Missing proof_payment" },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: "Missing proof_payment" }, { status: 400 });
     }
 
     const updateData = {
@@ -49,7 +48,7 @@ export async function POST(request, { params }) {
   } catch (error) {
     console.error("Error updating proof payment:", error);
     return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again.", detail: error.message },
       { status: 500 }
     );
   }

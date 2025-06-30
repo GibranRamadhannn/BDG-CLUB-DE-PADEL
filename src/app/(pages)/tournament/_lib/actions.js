@@ -33,12 +33,7 @@ export async function createTournament(data) {
   }
 }
 
-export async function registerPlayerToTournament(
-  formData,
-  tournamentId,
-  playerId1,
-  playerId2
-) {
+export async function registerPlayerToTournament(formData, tournamentId) {
   try {
     const { photo, proof_payment, community_logo, date_birth, ...fields } =
       formData;
@@ -104,10 +99,14 @@ export async function registerPlayerToTournament(
   }
 }
 
-export async function updateProofPayment(formData, tournamentId) {
+export async function updateProofPayment(
+  formData,
+  tournamentId,
+  playerId1,
+  playerId2
+) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    const cookieHeader = cookies().toString();
 
     const proof_payment = formData.proof_payment;
     const payment_notes = formData.payment_notes;
@@ -135,7 +134,6 @@ export async function updateProofPayment(formData, tournamentId) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Cookie: cookieHeader,
         },
         body: JSON.stringify(payload),
       }
@@ -161,6 +159,7 @@ export async function updateProofPayment(formData, tournamentId) {
     return {
       success: false,
       message: "Unexpected error occurred",
+      detail: error.message,
     };
   }
 }
