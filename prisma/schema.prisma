@@ -87,7 +87,7 @@ model Players {
   email           String
   instagram       String?
   date_birth      String
-  birth_place     String
+  birth_place     String?
   photo           String
   created_at      DateTime @default(now())
   updated_at      DateTime @updatedAt
@@ -124,7 +124,7 @@ model Tournament_Players {
   tournament_id   Int
   player_id       Int
   status_payment  String
-  proof_payment   String
+  proof_payment   String?
   community_logo  String?
   notes           String?
   created_at      DateTime @default(now())

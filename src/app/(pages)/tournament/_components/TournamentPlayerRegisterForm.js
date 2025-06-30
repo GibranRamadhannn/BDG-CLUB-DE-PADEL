@@ -163,9 +163,6 @@ export default function FormPlayerRegisterTournament() {
               value={formData.player1.jersey_size}
               onChange={handlePlayerChange("player1", "jersey_size")}
               options={[
-                { value: "xxxs", label: "XXXS" },
-                { value: "xxs", label: "XXS" },
-                { value: "xs", label: "XS" },
                 { value: "s", label: "S" },
                 { value: "m", label: "M" },
                 { value: "l", label: "L" },
@@ -185,17 +182,6 @@ export default function FormPlayerRegisterTournament() {
               onChange={handlePlayerChange("player1", "date_birth")}
               error={errors.p1_date_birth}
               withTime={false}
-              requiredIcon
-            />
-
-            <InputField
-              id="p1-birth_place"
-              label="Birth Place"
-              type="text"
-              placeholder="Enter your birth place"
-              value={formData.player1.birth_place}
-              onChange={handlePlayerChange("player1", "birth_place")}
-              error={errors.p1_birth_place}
               requiredIcon
             />
 
@@ -304,9 +290,6 @@ export default function FormPlayerRegisterTournament() {
               value={formData.player2.jersey_size}
               onChange={handlePlayerChange("player2", "jersey_size")}
               options={[
-                { value: "xxxs", label: "XXXS" },
-                { value: "xxs", label: "XXS" },
-                { value: "xs", label: "XS" },
                 { value: "s", label: "S" },
                 { value: "m", label: "M" },
                 { value: "l", label: "L" },
@@ -326,17 +309,6 @@ export default function FormPlayerRegisterTournament() {
               onChange={handlePlayerChange("player2", "date_birth")}
               error={errors.p2_date_birth}
               withTime={false}
-              requiredIcon
-            />
-
-            <InputField
-              id="p2-birth_place"
-              label="Birth Place"
-              type="text"
-              placeholder="Enter your birth place"
-              value={formData.player2.birth_place}
-              onChange={handlePlayerChange("player2", "birth_place")}
-              error={errors.p2_birth_place}
               requiredIcon
             />
 
@@ -398,20 +370,6 @@ export default function FormPlayerRegisterTournament() {
 
           <div className="px-5">
             <InputField
-              id="proof_payment"
-              label="Payment Proof"
-              as="file"
-              accept=".jpg,.jpeg,.png,.pdf"
-              placeholder="Upload your payment register proof"
-              value={formData.proof_payment}
-              onChange={handleRootChange("proof_payment")}
-              error={errors.proof_payment}
-              requiredIcon
-            />
-          </div>
-
-          <div className="px-5">
-            <InputField
               id="community_logo"
               label="Community Logo"
               as="file"
@@ -421,19 +379,6 @@ export default function FormPlayerRegisterTournament() {
               onChange={handleRootChange("community_logo")}
               error={errors.community_logo}
               requiredIcon
-            />
-          </div>
-
-          <div className="px-5">
-            <InputField
-              id="notes"
-              label="Payment Proof Notes"
-              as="textarea"
-              rows="2"
-              placeholder="Type your payment proof notes..."
-              value={formData.notes}
-              onChange={handleRootChange("notes")}
-              error={errors.notes}
             />
           </div>
         </div>
