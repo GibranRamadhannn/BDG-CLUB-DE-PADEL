@@ -17,6 +17,19 @@ export default function TournamentCard({
           <h2 className="md:text-xl text-lg font-semibold font-roboto">
             {tournament.organizer}
           </h2>
+          <h2 className="md:text-xl text-lg font-semibold font-roboto">
+            {new Date(tournament.start_date).toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })}{" "}
+            -{" "}
+            {new Date(tournament.end_date).toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })}
+          </h2>
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 bg-after-shock mx-1 py-2 px-6 rounded-3xl w-full md:w-fit">

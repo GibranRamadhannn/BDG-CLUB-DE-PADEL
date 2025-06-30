@@ -25,13 +25,12 @@ export async function POST(request, context) {
       gender,
       jersey_size,
       date_birth,
-      birth_place,
+      birth_place = NULL,
       community,
       phone_number,
       email,
       instagram,
       photo,
-      proof_payment,
       notes,
       status_payment = "PENDING",
     } = body;
@@ -42,12 +41,12 @@ export async function POST(request, context) {
     if (!gender) errors.gender = "Gender is required";
     if (!jersey_size) errors.jersey_size = "Jersey size is required";
     if (!date_birth) errors.date_birth = "Birth Date is required";
-    if (!birth_place) errors.birth_place = "Birth place is required";
+    // if (!birth_place) errors.birth_place = "Birth place is required";
     if (!community) errors.community = "Community is required";
     if (!phone_number) errors.phone_number = "Phone number is required";
     if (!email) errors.email = "Email is required";
     if (!photo) errors.photo = "Photo is required";
-    if (!proof_payment) errors.proof_payment = "Photo is required";
+    // if (!proof_payment) errors.proof_payment = "Photo is required";
 
     if (Object.keys(errors).length > 0) {
       return NextResponse.json({ errors }, { status: 400 });
@@ -74,7 +73,6 @@ export async function POST(request, context) {
         tournament_id: tournamentId,
         player_id: newPlayer.id,
         status_payment,
-        proof_payment,
         notes,
       },
     });
