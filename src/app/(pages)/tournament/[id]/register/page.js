@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { fetchTournamentById } from "../../../../_lib/tournament";
-import TournamentCard from "../../../../_components/TournamentCard";
-import FormPlayerRegisterTournament from "../../../../_components/TournamentPlayerRegisterForm";
+import { fetchTournamentById } from "../../_lib/tournament";
+import TournamentCard from "../../_components/TournamentCard";
+import FormPlayerRegisterTournament from "../../_components/TournamentPlayerRegisterForm";
 
 export default function RegisterTournamentPage() {
   const { id } = useParams();
