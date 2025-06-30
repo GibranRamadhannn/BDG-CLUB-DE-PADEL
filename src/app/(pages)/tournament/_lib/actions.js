@@ -33,7 +33,12 @@ export async function createTournament(data) {
   }
 }
 
-export async function registerPlayerToTournament(formData, tournamentId) {
+export async function registerPlayerToTournament(
+  formData,
+  tournamentId,
+  playerId1,
+  playerId2
+) {
   try {
     const { photo, proof_payment, community_logo, date_birth, ...fields } =
       formData;
@@ -92,6 +97,67 @@ export async function registerPlayerToTournament(formData, tournamentId) {
     };
   } catch (error) {
     console.error("registerPlayerToTournament error:", error);
+    return {
+      success: false,
+      message: "Unexpected error occurred",
+    };
+  }
+}
+
+export async function updateProofPayment(formData, tournamentId) {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const cookieHeader = cookies().toString();
+
+    const proof_payment = formData.proof_payment;
+    const payment_notes = formData.payment_notes;
+
+    const upload = async (file, prefix) => {
+      if (!file) return null;
+      const blob = await put(`${prefix}-${Date.now()}-${file.name}`, file, {
+        access: "public",
+        addRandomSuffix: false,
+        token: process.env.bdgclubdepadel_blob_READ_WRITE_TOKEN,
+      });
+      return blob.url;
+    };
+
+    const proofPaymentUrl = await upload(proof_payment, "payment");
+
+    const payload = {
+      proof_payment: proofPaymentUrl,
+      notes: payment_notes || "",
+    };
+
+    const res = await fetch(
+      `${baseUrl}/api/tournaments/${tournamentId}/${playerId1}/${playerId2}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Cookie: cookieHeader,
+        },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    const result = await res.json();
+
+    if (!res.ok) {
+      return {
+        success: false,
+        errors: result.errors || null,
+        message:
+          result.message || result.error || "Failed updating proof payment",
+      };
+    }
+
+    return {
+      success: true,
+      data: result.data,
+    };
+  } catch (error) {
+    console.error("updateProofPayment error:", error);
     return {
       success: false,
       message: "Unexpected error occurred",
