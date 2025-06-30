@@ -1,60 +1,60 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter, useParams } from "next/navigation";
-import InputField from "@/app/components/InputField";
-import { updateProofPayment } from "../../../../../_lib/actions";
+// import { useState } from "react";
+// import { useRouter, useParams } from "next/navigation";
+// import InputField from "@/app/components/InputField";
+// import { updateProofPayment } from "../../../../../_lib/actions";
 
 export default function RegisterConfirmationPage() {
-  const [formData, setFormData] = useState({
-    proof_payment: null,
-    payment_notes: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [formData, setFormData] = useState({
+  //   proof_payment: null,
+  //   payment_notes: "",
+  // });
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(null);
 
-  const params = useParams();
-  const { tournamentId, playerId1, playerId2 } = params;
-  const router = useRouter();
+  // const params = useParams();
+  // const { tournamentId, playerId1, playerId2 } = params;
+  // const router = useRouter();
 
-  const extractValue = (evtOrVal) => {
-    if (evtOrVal instanceof File || evtOrVal instanceof Blob) return evtOrVal;
-    if (evtOrVal?.target?.files) return evtOrVal.target.files[0];
-    return evtOrVal?.target?.value ?? evtOrVal;
-  };
+  // const extractValue = (evtOrVal) => {
+  //   if (evtOrVal instanceof File || evtOrVal instanceof Blob) return evtOrVal;
+  //   if (evtOrVal?.target?.files) return evtOrVal.target.files[0];
+  //   return evtOrVal?.target?.value ?? evtOrVal;
+  // };
 
-  const handleInputChange = (field) => (evtOrVal) => {
-    const value = extractValue(evtOrVal);
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
+  // const handleInputChange = (field) => (evtOrVal) => {
+  //   const value = extractValue(evtOrVal);
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [field]: value,
+  //   }));
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    // quick front‑end validation
-    if (!formData.proof_payment) {
-      setError("Please upload proof of payment first.");
-      return;
-    }
-    setError(null);
-    setLoading(true);
-    const result = await updateProofPayment(
-      formData,
-      tournamentId,
-      playerId1,
-      playerId2
-    );
-    setLoading(false);
+  //   // quick front‑end validation
+  //   if (!formData.proof_payment) {
+  //     setError("Please upload proof of payment first.");
+  //     return;
+  //   }
+  //   setError(null);
+  //   setLoading(true);
+  //   const result = await updateProofPayment(
+  //     formData,
+  //     tournamentId,
+  //     playerId1,
+  //     playerId2
+  //   );
+  //   setLoading(false);
 
-    if (result.success) {
-      router.push(`/tournament`);
-    } else {
-      setError(result.message || "Something went wrong, please try again.");
-    }
-  };
+  //   if (result.success) {
+  //     router.push(`/tournament`);
+  //   } else {
+  //     setError(result.message || "Something went wrong, please try again.");
+  //   }
+  // };
 
   return (
     <section className="min-h-screen font-[family-name:var(--font-montserrat)] bg-[url('/wintery-sunburst.svg')] bg-cover bg-center p-6">
@@ -70,7 +70,7 @@ export default function RegisterConfirmationPage() {
 
       <div className="md:px-12 flex justify-center items-center w-full">
         <form
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           className="flex flex-col md:flex-row gap-8 p-3 rounded-3xl bg-after-shock md:w-1/2"
         >
           <div className="flex items-center gap-3 w-full md:w-auto">
@@ -133,9 +133,9 @@ export default function RegisterConfirmationPage() {
             {loading ? "Submitting…" : "Submit"}
           </button> */}
 
-          {error && (
+          {/* {error && (
             <p className="text-red-500 text-sm mt-2 font-medium">{error}</p>
-          )}
+          )} */}
         </form>
       </div>
     </section>
