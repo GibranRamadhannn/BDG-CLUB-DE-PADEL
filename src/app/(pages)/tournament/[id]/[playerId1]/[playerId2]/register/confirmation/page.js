@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import InputField from "@/app/components/InputField";
-import { updateProofPayment } from "../../../_lib/actions";
+import { updateProofPayment } from "../../../../../_lib/actions";
 
 export default function RegisterConfirmationPage() {
   const [formData, setFormData] = useState({
