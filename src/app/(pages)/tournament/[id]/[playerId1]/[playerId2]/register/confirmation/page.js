@@ -106,7 +106,7 @@ export default function RegisterConfirmationPage() {
             </div>
           </div>
 
-          <InputField
+          {/* <InputField
             id="proof_payment"
             label="Proof Payment"
             as="file"
@@ -131,7 +131,7 @@ export default function RegisterConfirmationPage() {
             disabled={loading}
           >
             {loading ? "Submitting…" : "Submit"}
-          </button>
+          </button> */}
 
           {error && (
             <p className="text-red-500 text-sm mt-2 font-medium">{error}</p>
