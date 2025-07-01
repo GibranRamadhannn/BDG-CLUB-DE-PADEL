@@ -394,6 +394,7 @@ export default function FormPlayerRegisterTournament() {
                 { value: "the_padel_club", label: "The Padel Club" },
                 { value: "padel_pop", label: "Padel Pop" },
                 { value: "belajar_padel", label: "Belajar Padel" },
+                { value: "non_stop_padel", label: "Non Stop Padel" },
               ]}
               error={errors.community}
               requiredIcon
