@@ -40,6 +40,9 @@ const roboto = Roboto({
 export const metadata = {
   title: "BDG CLUB DE PADEL",
   description: "Bandung Club De Padel",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function GuestLayout({ children }) {

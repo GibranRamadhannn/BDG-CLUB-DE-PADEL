@@ -62,7 +62,7 @@ export default function FooterSection({ id }) {
           </div>
           <div className=" flex justify-center items-center rounded-lg w-full">
             <Image
-              src="/sponsor_logo/narrow/narrow_5.png"
+              src="/sponsor_logo/narrow/narrow_5.PNG"
               alt="NARROW Logo"
               className="object-contain"
               width={150}
@@ -92,7 +92,7 @@ export default function FooterSection({ id }) {
           </div>
           <div className=" flex justify-center items-center rounded-lg w-full">
             <Image
-              src="/sponsor_logo/northwood/northwood_9.PNG"
+              src="/sponsor_logo/northwood/northwood_9.png"
               alt="NORTHWOOD Logo"
               className="object-contain"
               width={150}
