@@ -92,7 +92,7 @@ export default function FooterSection({ id }) {
           </div>
           <div className=" flex justify-center items-center rounded-lg w-full">
             <Image
-              src="/sponsor_logo/northwood/northwood_9.png"
+              src="/sponsor_logo/northwood/northwood_9.PNG"
               alt="NORTHWOOD Logo"
               className="object-contain"
               width={150}
@@ -102,7 +102,7 @@ export default function FooterSection({ id }) {
           </div>
           <div className=" flex justify-center items-center rounded-lg w-full">
             <Image
-              src="/sponsor_logo/komodo/komodo_1.png"
+              src="/sponsor_logo/komodo/komodo_1.PNG"
               alt="KOMODO Logo"
               className="object-contain"
               width={150}
@@ -112,7 +112,7 @@ export default function FooterSection({ id }) {
           </div>
           <div className=" flex justify-center items-center rounded-lg w-full">
             <Image
-              src="/sponsor_logo/sawargi/sawargi_1.png"
+              src="/sponsor_logo/sawargi/sawargi_1.PNG"
               alt="SAWARGI Logo"
               className="object-contain"
               width={150}
