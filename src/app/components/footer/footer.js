@@ -39,24 +39,96 @@ export default function FooterSection({ id }) {
           Our sponsor
         </h2>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          <div className="bg-cavernous/50 text-black text-center text-sm p-4 rounded-lg w-full">
-            Sponsor 1
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1">
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/brodo/brodo_black_logo.png"
+              alt="BRODO Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
           </div>
-          <div className="bg-cavernous/50 text-black text-center text-sm p-4 rounded-lg w-full">
-            Sponsor 2
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/kai/kai_3.png"
+              alt="KAI Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
           </div>
-          <div className="bg-cavernous/50 text-black text-center text-sm p-4 rounded-lg w-full">
-            Sponsor 3
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/narrow/narrow_5.png"
+              alt="NARROW Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
           </div>
-          <div className="bg-cavernous/50 text-black text-center text-sm p-4 rounded-lg w-full">
-            Sponsor 4
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/teh_dia.png"
+              alt="TEH DIA Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
           </div>
-          <div className="bg-cavernous/50 text-black text-center text-sm p-4 rounded-lg w-full">
-            Sponsor 5
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/ejuice/juicenation_logo_1.png"
+              alt="JUICENATION Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
           </div>
-          <div className="bg-cavernous/50 text-black text-center text-sm p-4 rounded-lg w-full">
-            Sponsor 6
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/northwood/northwood_9.png"
+              alt="NORTHWOOD Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
+          </div>
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/komodo/komodo_1.png"
+              alt="KOMODO Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
+          </div>
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/sawargi/sawargi_1.png"
+              alt="SAWARGI Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
+          </div>
+          <div className=" flex justify-center items-center rounded-lg w-full">
+            <Image
+              src="/sponsor_logo/isola/isola_black.png"
+              alt="ISOLA Logo"
+              className="object-contain"
+              width={150}
+              height={150}
+              priority
+            />
           </div>
         </div>
       </div>
@@ -74,7 +146,7 @@ export default function FooterSection({ id }) {
           @bdg.clubdepadel
         </a>
         <h3 className="text-cavernous/70 font-medium text-xs">
-          BDGCLUBDEPADEL 2025 | Developed by Geeb Space
+          BDGCLUBDEPADEL 2025 | Developed by ISOLA
         </h3>
       </div>
       {/* Additional Items ::end */}
