@@ -11,7 +11,7 @@ export default function DetailTournamentPage() {
   const { id } = useParams();
   const [tournament, setTournament] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [showPlayerList, setShowPlayerList] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
 
   useEffect(() => {
     const getTournament = async () => {
@@ -23,8 +23,8 @@ export default function DetailTournamentPage() {
     if (id) getTournament();
   }, [id]);
 
-  const togglePlayerList = () => {
-    setShowPlayerList((prev) => !prev);
+  const toggleSection = (section) => {
+    setActiveSection((prev) => (prev === section ? null : section));
   };
 
   const groupPlayersByTwo = (players) => {
@@ -63,52 +63,110 @@ export default function DetailTournamentPage() {
         )}
       </div>
 
-      {/* Player List Toggle */}
-      <div className="px-6 w-full flex justify-start items-center gap-5">
-        <div
-          onClick={togglePlayerList}
-          className={`p-5 rounded-3xl text-center cursor-pointer transition-colors duration-300 font-[family-name:var(--font-roboto)] font-bold md:text-lg text-md ${
-            showPlayerList
-              ? "bg-after-shock text-black"
-              : "bg-black text-white hover:bg-after-shock hover:text-black"
-          }`}
-        >
-          <p>PLAYER LIST</p>
-        </div>
+      {/* Tab Buttons */}
+      <div className="px-6 w-full flex justify-start items-center overflow-auto gap-3 pb-3">
+        {[
+          { key: "draws", label: "DRAWS" },
+          { key: "results", label: "RESULTS" },
+          { key: "playerList", label: "PLAYER LIST" },
+          { key: "overview", label: "OVERVIEW" },
+        ].map(({ key, label }) => (
+          <div
+            key={key}
+            onClick={() => toggleSection(key)}
+            className={`px-5 py-3 rounded-2xl text-center cursor-pointer transition-colors duration-300 font-[family-name:var(--font-roboto)] font-bold md:text-lg text-sm text-nowrap ${
+              activeSection === key
+                ? "bg-after-shock text-black"
+                : "bg-black text-white hover:bg-after-shock hover:text-black"
+            } w-full md:w-auto`}
+          >
+            <p>{label}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Player Cards */}
+      {/* Tab Content */}
       <AnimatePresence>
-        {showPlayerList && tournament?.tournament_players?.length > 0 && (
+        {activeSection === "playerList" &&
+          tournament?.tournament_players?.length > 0 && (
+            <motion.div
+              key="player-list"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="overflow-hidden mt-6 px-6 w-full pb-5"
+            >
+              <div className="bg-white p-4 rounded-2xl shadow-lg flex flex-col items-center">
+                <div className="p-4 grid lg:grid-cols-2 grid-cols-1 gap-1 w-full">
+                  {groupPlayersByTwo(tournament.tournament_players).map(
+                    (group, idx) => (
+                      <PlayerCard
+                        key={idx}
+                        index={idx}
+                        players={group.map((g) => g.player)}
+                        community={group[0].player.community}
+                      />
+                    )
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+        {activeSection === "draws" && (
           <motion.div
-            key="player-list"
+            key="draws"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
             className="overflow-hidden mt-6 px-6 w-full pb-5"
           >
-            <div className="bg-white p-4 rounded-2xl shadow-lg flex flex-col items-center">
-              <div className="p-4 grid md:grid-cols-2 grid-cols-1 gap-4 w-full">
-                {groupPlayersByTwo(tournament.tournament_players).map(
-                  (group, idx) => (
-                    <PlayerCard
-                      key={idx}
-                      index={idx}
-                      players={group.map((g) => g.player)}
-                      community={group[0].player.community}
-                    />
-                  )
-                )}
-              </div>
+            <div className="bg-white p-4 rounded-2xl shadow-lg flex items-center justify-center">
+              <h2 className="text-3xl font-bold capitalize">COMING SOON</h2>
+            </div>
+          </motion.div>
+        )}
+
+        {activeSection === "overview" && (
+          <motion.div
+            key="overview"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="overflow-hidden mt-6 px-6 w-full pb-5"
+          >
+            <div className="bg-white p-4 rounded-2xl shadow-lg flex items-center justify-center">
+              <h2 className="text-3xl font-bold capitalize">COMING SOON</h2>
+            </div>
+          </motion.div>
+        )}
+
+        {activeSection === "results" && (
+          <motion.div
+            key="results"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="overflow-hidden mt-6 px-6 w-full pb-5"
+          >
+            <div className="bg-white p-4 rounded-2xl shadow-lg flex items-center justify-center">
+              <h2 className="text-3xl font-bold capitalize">COMING SOON</h2>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {showPlayerList && tournament?.tournament_players?.length === 0 && (
-        <p className="text-center text-gray-500 mt-4">No players registered.</p>
-      )}
+      {/* Fallback if playerList empty */}
+      {activeSection === "playerList" &&
+        tournament?.tournament_players?.length === 0 && (
+          <p className="text-center text-gray-500 mt-4">
+            No players registered.
+          </p>
+        )}
     </section>
   );
 }
