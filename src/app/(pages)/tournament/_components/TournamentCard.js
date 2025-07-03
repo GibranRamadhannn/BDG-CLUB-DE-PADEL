@@ -11,9 +11,12 @@ export default function TournamentCard({
     <div className="p-6 bg-[url('/wintery-sunburst.svg')] bg-cover bg-center rounded-2xl text-white md:flex w-full min-h-[250px]">
       <div className="flex flex-col justify-between w-full md:w-3/4 gap-8">
         <div>
-          <h1 className="md:text-3xl text-2xl font-bold font-roboto mb-2 text-[#faf1b3]">
+          <Link
+            className="md:text-3xl text-2xl font-bold font-roboto mb-2 text-[#faf1b3] hover:text-stoplight transition-colors duration-300"
+            href={`/tournament/${tournament.id}/detail`}
+          >
             {tournament.name}
-          </h1>
+          </Link>
           <h2 className="md:text-xl text-lg font-semibold font-roboto">
             {tournament.organizer}
           </h2>

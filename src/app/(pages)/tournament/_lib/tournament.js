@@ -18,6 +18,7 @@ export async function fetchTournamentById(id) {
   try {
     const res = await fetch(`/api/tournaments/${id}`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch tournament");
+
     return await res.json();
   } catch (error) {
     console.error("[fetchTournamentById]", error);
