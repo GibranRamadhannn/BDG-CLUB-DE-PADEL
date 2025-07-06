@@ -59,7 +59,7 @@ export default function NavbarTop() {
       {/* ========== Navbar Links :begin ========== */}
       <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-4 font-semibold text-sm bg-white rounded-4xl p-1">
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/tournament">Tournament</NavLink>
+        <NavLink href={`/tournament/1/detail`}>Tournament</NavLink>
         <NavLink href="/event">Event</NavLink>
         <NavLink href="/contact">Contact</NavLink>
         <NavLink href="/match">Match</NavLink>
