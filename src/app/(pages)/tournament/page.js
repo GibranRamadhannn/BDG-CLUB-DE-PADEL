@@ -64,7 +64,7 @@ export default function TournamentPage() {
             <TournamentCard
               key={tournament.id}
               tournament={tournament}
-              showRegisterButton={true}
+              showRegisterButton={false}
             />
           ))}
       </div>
