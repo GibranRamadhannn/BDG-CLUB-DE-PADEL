@@ -54,7 +54,10 @@ export default function NavDrawer({ isOpen, onClose }) {
           <NavLinkDrawer href="/" className="border-b text-xl">
             <HouseIcon size={17} /> Home
           </NavLinkDrawer>
-          <NavLinkDrawer href="/tournament" className="border-b text-xl">
+          <NavLinkDrawer
+            href={`/tournament/1/detail`}
+            className="border-b text-xl"
+          >
             <TrophyIcon size={17} /> Tournament
           </NavLinkDrawer>
           <NavLinkDrawer href="/event" className="border-b text-xl">
