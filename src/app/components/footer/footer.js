@@ -198,9 +198,12 @@ export default function FooterSection({ id }) {
         >
           @bdg.clubdepadel
         </a>
-        <h3 className="text-cavernous/70 font-medium text-xs">
+        <a
+          href="https://isola-woad.vercel.app"
+          className="text-cavernous/70 font-medium text-xs hover:text-stoplight"
+        >
           BDGCLUBDEPADEL 2025 | Developed by ISOLA
-        </h3>
+        </a>
       </div>
       {/* Additional Items ::end */}
     </section>
