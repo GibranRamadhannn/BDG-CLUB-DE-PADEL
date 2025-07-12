@@ -1,25 +1,37 @@
 "use client";
 import React from "react";
 
-function renderBox({ court, time, teams }) {
+function renderBox({ court, time, teams, group }) {
   const bgColor =
     court === "Court 1"
       ? "bg-dried-goldenrod/95"
       : court === "Court 2"
       ? "bg-fanatic-fuchsia/95"
       : "bg-white";
+
   return (
     <div className={`rounded-xl px-3 py-2 text-umbra ${bgColor}`}>
-      <p className="text-xs font-semibold capitalize text-center mb-4">
-        {court} - {time}
-      </p>
+      <div className="flex justify-between items-center w-full mb-4">
+        <p className="text-xs font-medium capitalize text-center">
+          {court} - {time}
+        </p>
+        {group && (
+          <div className="bg-effervescent-blue/80 py-1 px-2 rounded-xl text-white">
+            <p className="text-xs font-mono capitalize text-center">
+              Group {group}
+            </p>
+          </div>
+        )}
+      </div>
       <div className="grid grid-cols-2 gap-2">
         {teams.map(([title, value], index) => (
           <React.Fragment key={index}>
             <p className="text-sm font-semibold capitalize text-start">
               {title}
             </p>
-            <p className="text-sm font-medium capitalize text-end text-white">{value}</p>
+            <p className="text-sm font-medium capitalize text-end text-white">
+              {value}
+            </p>
           </React.Fragment>
         ))}
       </div>
@@ -32,6 +44,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "15.00 WIB",
+      group: "A",
       teams: [
         ["PADEL NGASAL", 0],
         ["PADEL POP", 0],
@@ -40,6 +53,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "15.00 WIB",
+      group: "A",
       teams: [
         ["SOLUNAR", 0],
         ["PADEL PISAN", 0],
@@ -48,6 +62,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "B",
       teams: [
         ["FPC", 0],
         ["BELAJAR PADEL", 0],
@@ -56,6 +71,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "B",
       teams: [
         ["THE PADEL HUB", 0],
         ["HARI HARI PADEL", 0],
@@ -64,6 +80,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "C",
       teams: [
         ["PPPADEL", 0],
         ["127 PADEL", 0],
@@ -72,6 +89,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "C",
       teams: [
         ["NONSTOP PADEL", 0],
         ["PAGI-PAGI", 0],
@@ -80,6 +98,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "D",
       teams: [
         ["BCDP B", 0],
         ["BCDP A", 0],
@@ -88,6 +107,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "D",
       teams: [
         ["NYOBAIN PADEL", 0],
         ["BAIKO PADEL", 0],
@@ -96,6 +116,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "A",
       teams: [
         ["PADEL NGASAL", 0],
         ["SOLUNAR", 0],
@@ -104,6 +125,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "A",
       teams: [
         ["PADEL POP", 0],
         ["PADEL PISAN", 0],
@@ -112,6 +134,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "B",
       teams: [
         ["FPC", 0],
         ["THE PADEL HUB", 0],
@@ -120,6 +143,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "B",
       teams: [
         ["BELAJAR PADEL", 0],
         ["HARI-HARI PADEL", 0],
@@ -128,6 +152,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "C",
       teams: [
         ["PPPADEL", 0],
         ["NONSTOP PADEL", 0],
@@ -136,6 +161,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "C",
       teams: [
         ["127 PADEL", 0],
         ["PAGI-PAGI", 0],
@@ -144,6 +170,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "D",
       teams: [
         ["BCDP B", 0],
         ["NYOBAIN PADEL", 0],
@@ -152,6 +179,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "D",
       teams: [
         ["BCDP A", 0],
         ["BAIKO PADEL", 0],
@@ -160,6 +188,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "A",
       teams: [
         ["PADEL NGASAL", 0],
         ["PADEL PISAN", 0],
@@ -168,6 +197,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "A",
       teams: [
         ["PADEL POP", 0],
         ["SOLUNAR", 0],
@@ -176,6 +206,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "B",
       teams: [
         ["FPC", 0],
         ["HARI-HARI PADEL", 0],
@@ -184,6 +215,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "B",
       teams: [
         ["BELAJAR PADEL", 0],
         ["THE PADEL HUB", 0],
@@ -192,6 +224,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "C",
       teams: [
         ["PPPADEL", 0],
         ["PAGI-PAGI", 0],
@@ -200,6 +233,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "C",
       teams: [
         ["127 PADEL", 0],
         ["NONSTOP PADEL", 0],
@@ -208,6 +242,7 @@ export default function ScheduleContent() {
     {
       court: "Court 1",
       time: "FOLLOWED",
+      group: "D",
       teams: [
         ["BCDP B", 0],
         ["BAIKO PADEL", 0],
@@ -216,6 +251,7 @@ export default function ScheduleContent() {
     {
       court: "Court 2",
       time: "FOLLOWED",
+      group: "D",
       teams: [
         ["BCDP A", 0],
         ["NYOBAIN PADEL", 0],
