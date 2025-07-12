@@ -12,6 +12,7 @@
   --spice-ivory: #f5eedc;
   --casino-lights: #fbf2b3;
   --after-shock: #ffc55a;
+  --dried-goldenrod: #e5a92f;
   --paternoster: #c7c7c7;
   --night-blue: #01064a;
   --effervescent-blue: #002b5b;
@@ -22,6 +23,7 @@
   --stoplight: #d81012;
   --rouge-sardes: #eb2030;
   --exotic-liras: #df0e62;
+  --fanatic-fuchsia: #ec1899;
   --moderate-green: #5cb338;
 }
 
@@ -34,6 +36,7 @@
   --color-mercury: var(--mercury);
   --color-spice-ivory: var(--spice-ivory);
   --color-after-shock: var(--after-shock);
+  --color-dried-goldenrod: var(--dried-goldenrod);
   --color-casino-lights: var(--casino-lights);
   --color-paternoster: var(--paternoster);
   --color-foreground: var(--foreground);
@@ -45,6 +48,7 @@
   --color-berlin-blue: var(--berlin-blue);
   --color-stoplight: var(--stoplight);
   --color-exotic-liras: var(--exotic-liras);
+  --color-fanatic-fuchsia: var(--fanatic-fuchsia);
   --color-rouge-sardes: var(--rouge-sardes);
   --color-moderate-green: var(--moderate-green);
   --font-sans: var(--font-geist-sans);

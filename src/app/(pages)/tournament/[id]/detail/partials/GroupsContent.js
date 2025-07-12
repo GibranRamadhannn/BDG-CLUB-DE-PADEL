@@ -20,8 +20,8 @@ export default function GroupsContent() {
               src="/community_logo/padel_ngasal.png"
               alt="Padel Ngasal Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">NERO / ARYA</span>
@@ -31,8 +31,8 @@ export default function GroupsContent() {
               src="/community_logo/padel_pop.png"
               alt="Padel Pop Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">SATRIA / DIO</span>
@@ -42,8 +42,8 @@ export default function GroupsContent() {
               src="/community_logo/solunar.png"
               alt="Solunar Logo"
               className="object-contain dark:invert"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">ZIEGLER / VELIC</span>
@@ -53,8 +53,8 @@ export default function GroupsContent() {
               src="/community_logo/padel_pisan.png"
               alt="Padel Pisan Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">AKBAR / MOMO</span>
@@ -73,11 +73,11 @@ export default function GroupsContent() {
         <ul className="space-y-3">
           <li className="flex items-center justify-between px-3">
             <Image
-              src="/community_logo/padel_ngasal.png"
-              alt="Padel Ngasal Logo"
+              src="/community_logo/FPC.png"
+              alt="FPC Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">GIAN / ANDI</span>
@@ -87,8 +87,8 @@ export default function GroupsContent() {
               src="/community_logo/belajar_padel.png"
               alt="Belajar Padel Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">ENDI / PIJAR</span>
@@ -98,8 +98,8 @@ export default function GroupsContent() {
               src="/community_logo/padel_hub.png"
               alt="The Padel Hub Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">ENZO / CHRISTIAN</span>
@@ -109,8 +109,8 @@ export default function GroupsContent() {
               src="/community_logo/hari_hari_padel.png"
               alt="Hari-Hari Padel Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">FERDI / GILBERTH</span>
@@ -132,8 +132,8 @@ export default function GroupsContent() {
               src="/community_logo/pppadel.png"
               alt="PPPadel Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">IPITE / HYLDAN</span>
@@ -143,19 +143,19 @@ export default function GroupsContent() {
               src="/community_logo/127_padel.png"
               alt="127 Padel Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">AJAY / GEGE</span>
           </li>
           <li className="flex items-center justify-between px-3">
             <Image
-              src="/community_logo/padel_ngasal.png"
-              alt="Padel Ngasal Logo"
+              src="/community_logo/nonstop_padel.png"
+              alt="Nonstop Padel Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">PIJEH / ARY</span>
@@ -165,8 +165,8 @@ export default function GroupsContent() {
               src="/community_logo/pagi_pagi.png"
               alt="Pagi Pagi Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">WISNU / NAUFAL</span>
@@ -188,8 +188,8 @@ export default function GroupsContent() {
               src="/community_logo/bcdp.png"
               alt="BCDP Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">AZIZ / SAMUEL</span>
@@ -199,8 +199,8 @@ export default function GroupsContent() {
               src="/community_logo/bcdp.png"
               alt="BCDP Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">MEGI / KHILMI</span>
@@ -210,8 +210,8 @@ export default function GroupsContent() {
               src="/community_logo/nyobain_padel.PNG"
               alt="Nyobain Padel Logo"
               className="object-contain"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">PANDU / NAUFAL</span>
@@ -221,8 +221,8 @@ export default function GroupsContent() {
               src="/community_logo/baiko_padel.png"
               alt="Baiko Padel Logo"
               className="object-contain dark:invert"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
             />
             <span className="text-md">FARDI / REI</span>
