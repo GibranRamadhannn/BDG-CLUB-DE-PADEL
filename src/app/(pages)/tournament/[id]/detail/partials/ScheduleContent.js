@@ -301,13 +301,13 @@ export default function ScheduleContent() {
 
   return (
     <div className="p-2 w-full gap-1">
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {/* Group Qualification */}
         <div className="p-2">
           <h2 className="text-2xl font-bold capitalize text-center mb-4">
             Group Qualification
           </h2>
-          <div className="grid grid-cols-2 gap-2 w-full p-2 bg-silver-medal/80 rounded-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-2 bg-silver-medal/80 rounded-2xl">
             {groupQualificationData.map((titlePairs, idx) => (
               <div key={idx}>{renderBox(titlePairs)}</div>
             ))}
@@ -320,7 +320,7 @@ export default function ScheduleContent() {
             <h2 className="text-2xl font-bold capitalize text-center mb-4">
               Quarter Final
             </h2>
-            <div className="grid grid-cols-2 gap-2 w-full p-2 bg-silver-medal/80 rounded-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-2 bg-silver-medal/80 rounded-2xl">
               {quarterFinalData.map((titlePairs, idx) => (
                 <div key={idx}>{renderBox(titlePairs)}</div>
               ))}
@@ -332,7 +332,7 @@ export default function ScheduleContent() {
             <h2 className="text-2xl font-bold capitalize text-center mb-4">
               Semi Final
             </h2>
-            <div className="grid grid-cols-2 gap-2 w-full p-2 bg-silver-medal/80 rounded-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-2 bg-silver-medal/80 rounded-2xl">
               {semiFinalData.map((titlePairs, idx) => (
                 <div key={idx}>{renderBox(titlePairs)}</div>
               ))}
