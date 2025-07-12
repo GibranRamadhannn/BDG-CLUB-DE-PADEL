@@ -6,6 +6,7 @@ import { fetchTournamentById } from "../../_lib/tournament";
 import TournamentCard from "../../_components/TournamentCard";
 import PlayerCard from "../../_components/PlayerCard";
 import { AnimatePresence, motion } from "framer-motion";
+import DrawsContent from "./partials/DrawsContent";
 
 export default function DetailTournamentPage() {
   const { id } = useParams();
@@ -124,7 +125,7 @@ export default function DetailTournamentPage() {
             className="overflow-hidden mt-6 px-6 w-full pb-5"
           >
             <div className="bg-white p-4 rounded-2xl shadow-lg flex items-center justify-center">
-              <h2 className="text-3xl font-bold capitalize">COMING SOON</h2>
+              <DrawsContent tournament={tournament} />
             </div>
           </motion.div>
         )}

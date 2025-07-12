@@ -174,7 +174,7 @@ export default function FooterSection({ id }) {
             </div>
             <div className=" flex justify-center items-center rounded-lg w-full">
               <Image
-                src="/media_partner/bdg_life.PNG"
+                src="/media_partner/bdg_life.png"
                 alt="BDG LIFE Logo"
                 className="object-contain dark:invert"
                 width={100}

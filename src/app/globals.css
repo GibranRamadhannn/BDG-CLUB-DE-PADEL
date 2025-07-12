@@ -14,6 +14,7 @@
   --after-shock: #ffc55a;
   --paternoster: #c7c7c7;
   --night-blue: #01064a;
+  --effervescent-blue: #002b5b;
   --bright-blue: #0065f8;
   --fish-net-blue: #1f436f;
   --neptune-blue: #2d609f;
@@ -37,6 +38,7 @@
   --color-paternoster: var(--paternoster);
   --color-foreground: var(--foreground);
   --color-night-blue: var(--night-blue);
+  --color-effervescent-blue: var(--effervescent-blue);
   --color-bright-blue: var(--bright-blue);
   --color-fish-net-blue: var(--fish-net-blue);
   --color-neptune-blue: var(--neptune-blue);
