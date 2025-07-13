@@ -299,8 +299,8 @@ export default function ScheduleContent() {
       court: "Court 1",
       time: "FOLLOWED (SF1)",
       teams: [
-        ["SOLUNAR", 0],
-        ["127 PADEL", 0],
+        ["SOLUNAR", 4],
+        ["127 PADEL", 3],
       ],
     },
     {
