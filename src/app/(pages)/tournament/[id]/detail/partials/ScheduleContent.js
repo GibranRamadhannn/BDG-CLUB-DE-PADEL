@@ -307,8 +307,8 @@ export default function ScheduleContent() {
       court: "Court 2",
       time: "FOLLOWED (SF2)",
       teams: [
-        ["THE PADEL HUB", 0],
-        ["PAGI-PAGI", 0],
+        ["THE PADEL HUB", 4],
+        ["PAGI-PAGI", 1],
       ],
     },
   ];
@@ -318,8 +318,8 @@ export default function ScheduleContent() {
       court: "Court 1",
       time: "FOLLOWED",
       teams: [
-        ["LOSE SF-1", 0],
-        ["LOSE SF-2", 0],
+        ["127 PADEL", 0],
+        ["PAGI-PAGI", 0],
       ],
     },
   ];
@@ -329,8 +329,8 @@ export default function ScheduleContent() {
       court: "Court 1",
       time: "FOLLOWED",
       teams: [
-        ["WINNER SF-1", 0],
-        ["WINNER SF-2", 0],
+        ["SOLUNAR", 0],
+        ["THE PADEL HUB", 0],
       ],
     },
   ];
