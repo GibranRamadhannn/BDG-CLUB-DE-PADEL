@@ -46,8 +46,8 @@ export default function ScheduleContent() {
       time: "15.00 WIB",
       group: "A",
       teams: [
-        ["PADEL NGASAL", 0],
-        ["PADEL POP", 0],
+        ["PADEL NGASAL", 1],
+        ["PADEL POP", 3],
       ],
     },
     {
@@ -55,7 +55,79 @@ export default function ScheduleContent() {
       time: "15.00 WIB",
       group: "A",
       teams: [
-        ["SOLUNAR", 0],
+        ["SOLUNAR", 3],
+        ["PADEL PISAN", 1],
+      ],
+    },
+    {
+      court: "Court 1",
+      time: "FOLLOWED",
+      group: "B",
+      teams: [
+        ["FPC", 2],
+        ["BELAJAR PADEL", 2],
+      ],
+    },
+    {
+      court: "Court 2",
+      time: "FOLLOWED",
+      group: "B",
+      teams: [
+        ["THE PADEL HUB", 3],
+        ["HARI HARI PADEL", 1],
+      ],
+    },
+    {
+      court: "Court 1",
+      time: "FOLLOWED",
+      group: "C",
+      teams: [
+        ["PPPADEL", 2],
+        ["127 PADEL", 2],
+      ],
+    },
+    {
+      court: "Court 2",
+      time: "FOLLOWED",
+      group: "C",
+      teams: [
+        ["NONSTOP PADEL", 1],
+        ["PAGI-PAGI", 3],
+      ],
+    },
+    {
+      court: "Court 1",
+      time: "FOLLOWED",
+      group: "D",
+      teams: [
+        ["BCDP B", 3],
+        ["BCDP A", 1],
+      ],
+    },
+    {
+      court: "Court 2",
+      time: "FOLLOWED",
+      group: "D",
+      teams: [
+        ["NYOBAIN PADEL", 2],
+        ["BAIKO PADEL", 2],
+      ],
+    },
+    {
+      court: "Court 1",
+      time: "FOLLOWED",
+      group: "A",
+      teams: [
+        ["PADEL NGASAL", 1],
+        ["SOLUNAR", 3],
+      ],
+    },
+    {
+      court: "Court 2",
+      time: "FOLLOWED",
+      group: "A",
+      teams: [
+        ["PADEL POP", 4],
         ["PADEL PISAN", 0],
       ],
     },
@@ -65,7 +137,7 @@ export default function ScheduleContent() {
       group: "B",
       teams: [
         ["FPC", 0],
-        ["BELAJAR PADEL", 0],
+        ["THE PADEL HUB", 4],
       ],
     },
     {
@@ -73,79 +145,7 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "B",
       teams: [
-        ["THE PADEL HUB", 0],
-        ["HARI HARI PADEL", 0],
-      ],
-    },
-    {
-      court: "Court 1",
-      time: "FOLLOWED",
-      group: "C",
-      teams: [
-        ["PPPADEL", 0],
-        ["127 PADEL", 0],
-      ],
-    },
-    {
-      court: "Court 2",
-      time: "FOLLOWED",
-      group: "C",
-      teams: [
-        ["NONSTOP PADEL", 0],
-        ["PAGI-PAGI", 0],
-      ],
-    },
-    {
-      court: "Court 1",
-      time: "FOLLOWED",
-      group: "D",
-      teams: [
-        ["BCDP B", 0],
-        ["BCDP A", 0],
-      ],
-    },
-    {
-      court: "Court 2",
-      time: "FOLLOWED",
-      group: "D",
-      teams: [
-        ["NYOBAIN PADEL", 0],
-        ["BAIKO PADEL", 0],
-      ],
-    },
-    {
-      court: "Court 1",
-      time: "FOLLOWED",
-      group: "A",
-      teams: [
-        ["PADEL NGASAL", 0],
-        ["SOLUNAR", 0],
-      ],
-    },
-    {
-      court: "Court 2",
-      time: "FOLLOWED",
-      group: "A",
-      teams: [
-        ["PADEL POP", 0],
-        ["PADEL PISAN", 0],
-      ],
-    },
-    {
-      court: "Court 1",
-      time: "FOLLOWED",
-      group: "B",
-      teams: [
-        ["FPC", 0],
-        ["THE PADEL HUB", 0],
-      ],
-    },
-    {
-      court: "Court 2",
-      time: "FOLLOWED",
-      group: "B",
-      teams: [
-        ["BELAJAR PADEL", 0],
+        ["BELAJAR PADEL", 4],
         ["HARI-HARI PADEL", 0],
       ],
     },
@@ -154,8 +154,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "C",
       teams: [
-        ["PPPADEL", 0],
-        ["NONSTOP PADEL", 0],
+        ["PPPADEL", 3],
+        ["NONSTOP PADEL", 1],
       ],
     },
     {
@@ -163,8 +163,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "C",
       teams: [
-        ["127 PADEL", 0],
-        ["PAGI-PAGI", 0],
+        ["127 PADEL", 3],
+        ["PAGI-PAGI", 1],
       ],
     },
     {
@@ -172,8 +172,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "D",
       teams: [
-        ["BCDP B", 0],
-        ["NYOBAIN PADEL", 0],
+        ["BCDP B", 3],
+        ["NYOBAIN PADEL", 1],
       ],
     },
     {
@@ -181,8 +181,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "D",
       teams: [
-        ["BCDP A", 0],
-        ["BAIKO PADEL", 0],
+        ["BCDP A", 1],
+        ["BAIKO PADEL", 3],
       ],
     },
     {
@@ -190,8 +190,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "A",
       teams: [
-        ["PADEL NGASAL", 0],
-        ["PADEL PISAN", 0],
+        ["PADEL NGASAL", 2],
+        ["PADEL PISAN", 2],
       ],
     },
     {
@@ -199,8 +199,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "A",
       teams: [
-        ["PADEL POP", 0],
-        ["SOLUNAR", 0],
+        ["PADEL POP", 1],
+        ["SOLUNAR", 3],
       ],
     },
     {
@@ -208,8 +208,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "B",
       teams: [
-        ["FPC", 0],
-        ["HARI-HARI PADEL", 0],
+        ["FPC", 3],
+        ["HARI-HARI PADEL", 1],
       ],
     },
     {
@@ -217,8 +217,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "B",
       teams: [
-        ["BELAJAR PADEL", 0],
-        ["THE PADEL HUB", 0],
+        ["BELAJAR PADEL", 1],
+        ["THE PADEL HUB", 3],
       ],
     },
     {
@@ -226,8 +226,8 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "C",
       teams: [
-        ["PPPADEL", 0],
-        ["PAGI-PAGI", 0],
+        ["PPPADEL", 1],
+        ["PAGI-PAGI", 3],
       ],
     },
     {
@@ -235,7 +235,7 @@ export default function ScheduleContent() {
       time: "FOLLOWED",
       group: "C",
       teams: [
-        ["127 PADEL", 0],
+        ["127 PADEL", 4],
         ["NONSTOP PADEL", 0],
       ],
     },
@@ -264,32 +264,32 @@ export default function ScheduleContent() {
       court: "Court 1",
       time: "FOLLOWED (QF1)",
       teams: [
-        ["WINNER GROUP A", 0],
-        ["RUNNER UP GROUP B", 0],
+        ["SOLUNAR", 0],
+        ["BELAJAR PADEL", 0],
       ],
     },
     {
       court: "Court 2",
       time: "FOLLOWED (QF2)",
       teams: [
-        ["WINNER GROUP B", 0],
-        ["RUNNER UP GROUP A", 0],
+        ["THE PADEL HUB", 0],
+        ["PADEL POP", 0],
       ],
     },
     {
       court: "Court 1",
       time: "FOLLOWED (QF3)",
       teams: [
-        ["WINNER GROUP C", 0],
-        ["RUNNER UP GROUP D", 0],
+        ["127 PADEL", 0],
+        ["NYOBAIN PADEL", 0],
       ],
     },
     {
       court: "Court 2",
       time: "FOLLOWED (QF4)",
       teams: [
-        ["WINNER GROUP D", 0],
-        ["RUNNER UP GROUP C", 0],
+        ["BCDP B", 0],
+        ["PAGI-PAGI", 0],
       ],
     },
   ];
