@@ -264,32 +264,32 @@ export default function ScheduleContent() {
       court: "Court 1",
       time: "FOLLOWED (QF1)",
       teams: [
-        ["SOLUNAR", 0],
-        ["BELAJAR PADEL", 0],
+        ["SOLUNAR", 4],
+        ["BELAJAR PADEL", 2],
       ],
     },
     {
       court: "Court 2",
       time: "FOLLOWED (QF2)",
       teams: [
-        ["THE PADEL HUB", 0],
-        ["PADEL POP", 0],
+        ["THE PADEL HUB", 4],
+        ["PADEL POP", 3],
       ],
     },
     {
       court: "Court 1",
       time: "FOLLOWED (QF3)",
       teams: [
-        ["127 PADEL", 0],
-        ["NYOBAIN PADEL", 0],
+        ["127 PADEL", 4],
+        ["NYOBAIN PADEL", 3],
       ],
     },
     {
       court: "Court 2",
       time: "FOLLOWED (QF4)",
       teams: [
-        ["BCDP B", 0],
-        ["PAGI-PAGI", 0],
+        ["BCDP B", 3],
+        ["PAGI-PAGI", 4],
       ],
     },
   ];
@@ -299,16 +299,16 @@ export default function ScheduleContent() {
       court: "Court 1",
       time: "FOLLOWED (SF1)",
       teams: [
-        ["WINNER QF-1", 0],
-        ["WINNER QF-3", 0],
+        ["SOLUNAR", 0],
+        ["127 PADEL", 0],
       ],
     },
     {
       court: "Court 2",
       time: "FOLLOWED (SF2)",
       teams: [
-        ["WINNER QF-2", 0],
-        ["WINNER QF-4", 0],
+        ["THE PADEL HUB", 0],
+        ["PAGI-PAGI", 0],
       ],
     },
   ];
